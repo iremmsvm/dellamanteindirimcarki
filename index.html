@@ -28,7 +28,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        background-image: url("https://i.ibb.co/qnJ1zR4/pl.jpg");
+        background-image: url("https://i.ibb.co/4tQHjPm/son-1.jpg");
         background-size: cover;
         background-position: center;
         padding: 30px;
@@ -40,7 +40,7 @@
       }
 
       .logo {
-        max-width: 150px;
+        max-width: 200px;
         max-height: 150px;
         margin-bottom: 20px;
         filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.3));
@@ -72,7 +72,10 @@
         border-radius: 50%;
         background-color: #4e2000;
         box-shadow: 0 0 30px rgba(255, 165, 0, 0.3);
+        width: 400px; /* CSS boyut */
+        height: 400px; /* CSS boyut */
       }
+      
 
       .pointer {
         width: 0;
@@ -276,7 +279,7 @@
           ctx.textAlign = "right";
           ctx.fillStyle = "white";
           ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
-          ctx.shadowBlur = 5;
+          ctx.shadowBlur = 2;
           
           // Adjust font size based on text length
           const text = segments[i].text;
@@ -287,35 +290,7 @@
           ctx.restore();
         }
 
-        const img = new Image();
-        img.src = "https://i.ibb.co/vZQgbQm/carkortasi.png";
-        img.onload = function () {
-            const centerX = 200;
-            const centerY = 200;
-            
-            // Use original image dimensions
-            const imgWidth = img.width;
-            const imgHeight = img.height;
-            
-            // Set a new target size while preserving aspect ratio
-            const targetSize = 150;
-            let drawWidth, drawHeight;
-            
-            if (imgWidth > imgHeight) {
-                drawWidth = targetSize;
-                drawHeight = (imgHeight / imgWidth) * targetSize;
-            } else {
-                drawHeight = targetSize;
-                drawWidth = (imgWidth / imgHeight) * targetSize;
-            }
-            
-            // Calculate position to center the image
-            const imgX = centerX - (drawWidth / 2);
-            const imgY = centerY - (drawHeight / 2);
-            
-            // Draw the image
-            ctx.drawImage(img, imgX, imgY, drawWidth, drawHeight);
-        };
+        
 
       }
 
